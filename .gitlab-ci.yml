@@ -14,6 +14,7 @@ semgrep_scan:
   stage: static_testing
   image: semgrep/semgrep:latest
   script:
+    - semgrep login && semgrep ci
     - semgrep --config "p/php"
   only:
     - main
@@ -28,4 +29,3 @@ docker_build:
   only:
     - main
   needs: ["docker_linting","semgrep_scan"]
-
