@@ -1,0 +1,18 @@
+stages:
+  - docker_build
+  - docker_validate
+
+docker_build:
+  stage: docker_build
+  image: docker:latest 
+  script:
+    - docker build -t swivel-tetris .
+  only:
+    - main
+
+docker_validate:
+  stage: docker_validate
+  script:
+    - docker run --rm my-docker-image docker version
+  only:
+    - main
