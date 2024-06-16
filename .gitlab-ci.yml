@@ -20,6 +20,7 @@ docker_build:
     - docker build -t swivel-tetris .
   only:
     - main
+  needs: ["lint_dockerfile"]
 
 docker_validate:
   stage: docker_validate
