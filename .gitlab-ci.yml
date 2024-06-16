@@ -14,7 +14,7 @@ semgrep_scan:
   stage: static_testing
   image: semgrep/semgrep:latest
   script:
-    - semgrep --config auto
+    - semgrep --config auto --metrics=off
   only:
     - main
     
