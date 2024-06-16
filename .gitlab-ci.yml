@@ -1,6 +1,15 @@
 stages:
+  - static_testing
   - docker_build
   - docker_validate
+
+docker_linting:
+  stage: static_testing
+  image: hadolint/hadolint:latest
+  script:
+    - hadolint Dockerfile
+  only:
+    - main
 
 docker_build:
   stage: docker_build
