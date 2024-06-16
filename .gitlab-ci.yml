@@ -1,13 +1,20 @@
 stages:
   - static_testing
   - docker_build
-  - docker_validate
 
-lint_dockerfile:
+docker_linting:
   stage: static_testing
   image: hadolint/hadolint:latest-debian
   script:
     - hadolint Dockerfile
+  only:
+    - main
+
+semgrep_scan:
+  stage: static_testing
+  image: semgrep/semgrep:latest
+  script:
+    - semgrep --config auto
   only:
     - main
     
@@ -20,11 +27,5 @@ docker_build:
     - docker build -t swivel-tetris .
   only:
     - main
-  needs: ["lint_dockerfile"]
+  needs: ["docker_linting","semgrep_scan"]
 
-docker_validate:
-  stage: docker_validate
-  script:
-    - docker run --rm my-docker-image docker version
-  only:
-    - main
