@@ -15,7 +15,7 @@ semgrep_scan:
   image: semgrep/semgrep:latest
   script:
     - semgrep login && semgrep ci
-    - semgrep --config "p/php"
+    - semgrep --config auto
   only:
     - main
     
