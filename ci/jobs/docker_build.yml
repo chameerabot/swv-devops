@@ -4,7 +4,7 @@ docker_build:
   services:
     - docker:dind
   script:
-    - ci/scriptsbuild_n_push.sh 
+    - ci/scripts/build_n_push.sh 
   artifacts:
     paths:
       - $LOGFILE
