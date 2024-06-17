@@ -1,0 +1,4 @@
+  variables:
+    AWS_REGION: "us-east-2"  # AWS region
+    AWS_ACCOUNT_ID: "933445498150" #AWS account ID
+

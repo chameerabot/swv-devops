@@ -1,3 +1,6 @@
+include:
+  - ci/variables.yml
+  
 stages:
   - static_testing
   - docker_build
@@ -23,17 +26,13 @@ docker_build:
   image: docker:latest 
   services:
     - docker:dind
-  variables:
-    AWS_REGION: "us-east-2"  # Set your AWS region here
-    AWS_ACCOUNT_ID: "933445498150"
   script:
     - apk add --no-cache python3 py3-pip
     - apk add --no-cache aws-cli
     - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
-    - docker build -t my-docker-image .
-    - docker tag my-docker-image:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/swivel-tetris:latest
+    - docker build -t swivel-tetris .
+    - docker tag swivel-tetris:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/swivel-tetris:latest
     - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/swivel-tetris:latest
   only:
     - main
   needs: ["docker_linting", "semgrep_scan"]
-  
