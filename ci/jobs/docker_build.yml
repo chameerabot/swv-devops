@@ -5,7 +5,9 @@ docker_build:
     - docker:dind
   script:
     - ../scripts/build_docker_image.sh
-
+  artifacts:
+    paths:
+      - $LOGFILE
   only:
     - main
   needs: ["docker_linting", "semgrep_scan"]

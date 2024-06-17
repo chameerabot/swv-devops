@@ -5,6 +5,9 @@ docker_linting:
     - echo "Starting Docker Linting..." >> $LOGFILE
     - hadolint Dockerfile >> $LOGFILE 2>&1
     - echo " Completed Docker Linting..." >> $LOGFILE
+  artifacts:
+    paths:
+      - $LOGFILE
   only:
     - main
 
