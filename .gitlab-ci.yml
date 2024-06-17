@@ -35,4 +35,4 @@ docker_build:
     - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/swivel-tetris:latest
   only:
     - main
-  needs: ["ldocker_linting", "semgrep_scan"]
+  needs: ["docker_linting", "semgrep_scan"]
