@@ -2,7 +2,9 @@ docker_linting:
   stage: static_testing
   image: hadolint/hadolint:latest-debian
   script:
-    - hadolint Dockerfile
+    - echo "Starting Docker Linting..." >> $LOGFILE
+    - hadolint Dockerfile >> $LOGFILE 2>&1
+    - echo " Completed Docker Linting..." >> $LOGFILE
   only:
     - main
 
@@ -10,11 +12,11 @@ semgrep_scan:
   stage: static_testing
   image: semgrep/semgrep:latest
   script:
-    - echo "Starting Semgrep Scan..." > debug.log
-    - semgrep login && semgrep ci > debug.log 2>&1
-    - echo " Completed Semgrep Scan..." >> debug.log
+    - echo "Starting Semgrep Scan..." >> $LOGFILE
+    - semgrep login && semgrep ci >> $LOGFILE 2>&1
+    - echo " Completed Semgrep Scan..." >> $LOGFILE
   artifacts:
     paths:
-      - debug.log
+      - $LOGFILE
   only:
     - main
