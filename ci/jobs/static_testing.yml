@@ -10,6 +10,11 @@ semgrep_scan:
   stage: static_testing
   image: semgrep/semgrep:latest
   script:
-    - semgrep login && semgrep ci 
+    - echo "Starting Semgrep Scan..." > debug.log
+    - semgrep login && semgrep ci > debug.log 2>&1
+    - echo " Completed Semgrep Scan..." >> debug.log
+  artifacts:
+    paths:
+      - debug.log
   only:
     - main
