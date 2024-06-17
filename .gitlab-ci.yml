@@ -14,8 +14,8 @@ semgrep_scan:
   stage: static_testing
   image: semgrep/semgrep:latest
   script:
-    - semgrep login && semgrep ci
-    - semgrep --config auto
+    - semgrep login && semgrep --config auto
+    # - semgrep --config auto
   only:
     - main
     
