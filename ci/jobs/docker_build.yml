@@ -6,10 +6,13 @@ docker_build:
   script:
     - apk add --no-cache python3 py3-pip
     - apk add --no-cache aws-cli
-    - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
-    - docker build -t swivel-tetris .
-    - docker tag swivel-tetris:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/swivel-tetris:latest
-    - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/swivel-tetris:latest
+    - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR
+    - docker build -t $APP_NAME .
+    - docker tag $APP_NAME:latest $ECR_REPO:latest
+    - docker tag $APP_NAME:latest $ECR_REPO:$IMAGE_TAG
+    - docker push $ECR_REP:latest
+    - docker push $ECR_REPO:$IMAGE_TAG
   only:
     - main
   needs: ["docker_linting", "semgrep_scan"]
+
