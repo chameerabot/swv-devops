@@ -17,7 +17,7 @@ semgrep_scan:
     - semgrep login && semgrep ci 
   only:
     - main
-    
+
 docker_build:
   stage: docker_build
   image: docker:latest 
@@ -35,4 +35,4 @@ docker_build:
     - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/swivel-tetris:latest
   only:
     - main
-  needs: ["lint_dockerfile", "semgrep_scan"]
+  needs: ["ldocker_linting", "semgrep_scan"]
