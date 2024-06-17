@@ -4,7 +4,7 @@ docker_build:
   services:
     - docker:dind
   script:
-    - chmod 700 ci/scripts/docker_build_n_push.sh
+    - chmod 700 ci/scripts/build_n_push.sh
     - ci/scripts/build_n_push.sh 
   artifacts:
     paths:
