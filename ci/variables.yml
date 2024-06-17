@@ -1,9 +1,11 @@
   variables:
     AWS_REGION: "us-east-2"  # AWS region
     AWS_ACCOUNT_ID: "933445498150" #AWS account ID
+    CI_DEBUG_TRACE: "true"
     APP_VERSION: 1.0.0
     APP_NAME: "swivel-tetris"
     IMAGE_TAG: $CI_COMMIT_SHA-$APP_VERSION
     ECR: $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
     ECR_REPO: $ECR/$APP_NAME
+    CI_DEBUG_TRACE: "true" 
 

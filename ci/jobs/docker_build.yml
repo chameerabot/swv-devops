@@ -15,4 +15,3 @@ docker_build:
   only:
     - main
   needs: ["docker_linting", "semgrep_scan"]
-
