@@ -9,5 +9,5 @@
     ECR_REPO: $ECR/$APP_NAME
     # CI_DEBUG_TRACE: "true"
     LOGFILE : ${CI_JOB_NAME}-debug.log
-
+    TF_IN_AUTOMATION: "true"
 

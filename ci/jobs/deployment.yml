@@ -1,11 +1,9 @@
-deploy_infra:
+app_deployment:
   stage: deployment
-  image: hashicorp/terraform:light
-  before_script:
-    - apk add --update bash
+  image: hashicorp/terraform:latest
   script:
-    - chmod 700 ci/scripts/deployment.sh
-    - ci/scripts/deployment.sh
+    - terraform -chdir=infra-live init
+    - terraform -chdir=infra-live apply
   only:
     - main
   needs: ["docker_build"]
