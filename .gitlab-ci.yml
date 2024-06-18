@@ -2,6 +2,7 @@ include:
   - ci/variables.yml
   - ci/jobs/static_testing.yml
   - ci/jobs/docker_build.yml
+  - ci/jobs/deployment.yml
 
 stages:
   - static_testing
