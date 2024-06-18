@@ -1,0 +1,8 @@
+deploy_infra:
+  stage: deployment
+  image: hashicorp/terraform:latest
+  script:
+    - chmod 700 ci/scripts/deployment.sh
+    - ci/scripts/deployment.sh
+  only:
+    - main
