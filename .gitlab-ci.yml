@@ -6,4 +6,5 @@ include:
 stages:
   - static_testing
   - docker_build
+  - deployment 
 

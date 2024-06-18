@@ -1,0 +1,13 @@
+[
+        {
+            "name": "main-container",
+            "image": "933445498150.dkr.ecr.us-east-2.amazonaws.com/swivel-tetris:latest",
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80
+                }
+            ]
+        }
+]
