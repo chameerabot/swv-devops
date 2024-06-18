@@ -1,8 +1,10 @@
 app_deployment:
   stage: deployment
-  image: hashicorp/terraform:latest
-  before_script:
-    - apk add --update bash
+  image: 
+    name: hashicorp/terraform:latest
+    entrypoint:
+      - '/usr/bin/env'
+      - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
   script:
     - terraform -chdir=infra-live init
     - terraform -chdir=infra-live apply
