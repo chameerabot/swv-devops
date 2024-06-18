@@ -2,7 +2,9 @@ deploy_infra:
   stage: deployment
   image: hashicorp/terraform:latest
   script:
-    - chmod 700 ci/scripts/deployment.sh
-    - ci/scripts/deployment.sh
+    - cd infra-live >> $LOGFILE 2>&1
+    - terraform init >> $LOGFILE 2>&1
+    - terraform apply -auto-approve >> $LOGFILE 2>&1
   only:
     - main
+  needs: ["docker_build"]
