@@ -7,7 +7,7 @@ app_deployment:
       - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
   script:
     - terraform -chdir=infra-live init
-    - terraform -chdir=infra-live apply
+    - terraform -chdir=infra-live apply -auto-approve 
   only:
     - main
   needs: ["docker_build"]
