@@ -109,8 +109,40 @@ The pipeline configuration is modular, allowing for easy maintenance and scalabi
 <br>
 ![Screenshot](docs/images/only_main.png)
 
-## Notes 
-### App Deployment & Testing 
+### Notes 
+### CICD Pipeline Testing 
+- 1. Please request access to my personal gitlab project to test the exisitng CICD pipeline 
+or 
+- 2. If you setup your own gitlab project using this source code please follow these steps 
+### AWS Authentication
+1. **Create IAM CLI User:**
+   - Create an IAM user with the following permissions:
+     - IAMFullAccess
+     - AmazonEC2ContainerRegistryReadOnly
+
+2. **Add IAM CLI User Credentials to GitLab:**
+   - Navigate to `Settings` >> `CI/CD` >> `Variables` in your GitLab project.
+   - Add the following environment variables:
+     - `AWS_ACCESS_KEY_ID`
+     - `AWS_SECRET_ACCESS_KEY`
+
+3. **Create IAM Role:**
+   - Create an IAM role with the necessary permissions for deployment.
+   - Ensure this IAM role allows the IAM CLI user to assume it.
+
+4. **Update IAM Role ARN:**
+   - Update the IAM role ARN in the infra-live/terraform.tfvars file for the assume_role_arn variable
+
+### Semgrep App Token
+- Obtain a Semgrep app token for the Semgrep Scan Job.
+5. **Add Semgrep App Token to GitLab:**
+   - Navigate to `Settings` >> `CI/CD` >> `Variables` in your GitLab project.
+   - Add the following environment variable:
+     - `SEMGREP_APP_TOKEN`
+
+
+
+
 Once deployment is completed, loadblancer dns name will be logged as a terraform output. You should be able to access the game using the dns name 
 <br>
 ![Screenshot](docs/images/terraform_output.png)
