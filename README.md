@@ -47,9 +47,9 @@ Implemented GitLab CI/CD pipelines to automate the integration process, ensuring
 
 #### Infrastructure as Code (IaC)
 - **Terraform:** Used Terraform to manage infrastructure as code, allowing for version control and automated provisioning of infrastructure.
-- **Organized File and Folder Structure:** Followed best practices in organizing Terraform files and folders to ensure clarity and consistency in the project.
+    - **Organized File and Folder Structure:** Followed best practices in organizing Terraform files and folders to ensure clarity and consistency in the project.
 [Image_placeholder]
-- **Authentication:** Utilized best practices in authentication with cloud providers, using IAM roles instead of hard coding secrets.
+    - **Authentication:** Utilized best practices in authentication with cloud providers, using IAM roles instead of hard coding secrets.
 [Image_placeholder]
 
 
