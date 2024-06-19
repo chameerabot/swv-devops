@@ -115,8 +115,8 @@ The pipeline configuration is modular, allowing for easy maintenance and scalabi
 - 2. If you setup your own gitlab project to test the pipeline using this source code please follow these steps 
 ### AWS Authentication
 1. **Create IAM CLI User:**
-   - Create an IAM user with the following permissions:
-     - IAMFullAccess
+   - Create an IAM user with the following permissions and policies:
+     - sts:AssumeRole 
      - AmazonEC2ContainerRegistryReadOnly
 
 2. **Add IAM CLI User Credentials to GitLab:**
@@ -126,15 +126,25 @@ The pipeline configuration is modular, allowing for easy maintenance and scalabi
      - `AWS_SECRET_ACCESS_KEY`
 
 3. **Create IAM Role:**
-   - Create an IAM role with the necessary permissions for deployment.
+   - Create an IAM role with the necessary permissions for deployment. 
    - Ensure this IAM role allows the IAM CLI user to assume it.
 
 4. **Update IAM Role ARN:**
-   - Update the IAM role ARN in the infra-live/terraform.tfvars file for the 'assume_role_arn' variable
+   - Update the IAM role ARN in the `infra-live/terraform.tfvars` file for the 'assume_role_arn' variable
+   - Update the IAM role ARN in the `infra-live/backend.tf` file for the 'assume_role_arn' variable
+
+### Terraform 
+1. **Create S3 Bucket and DynamoDB Table:**
+   - Create an S3 bucket to store the Terraform state files.
+   - Create a DynamoDB table to lock the state file to prevent concurrent modifications.
+
+2. **Update `backend.tf`:**
+   - Update the `infra-live/backend.tf` file with the respective values for the S3 bucket and DynamoDB table.
+
 
 ### Semgrep App Token
 - Obtain a Semgrep app token for the Semgrep Scan Job.
-5. **Add Semgrep App Token to GitLab:**
+1. **Add Semgrep App Token to GitLab:**
    - Navigate to `Settings` >> `CI/CD` >> `Variables` in your GitLab project.
    - Add the following environment variable:
      - `SEMGREP_APP_TOKEN`
