@@ -76,3 +76,12 @@ Implemented manual logging in jobs and published those debug logs as GitLab arti
 
 
 ### 2. Building and Packaging the application as a container in a CI/CD pipeline ready for deployment
+Developed a fully automated gitlab CI/CD pipeline that uses best practices
+#### Modular CI/CD Configuration 
+The pipeline configuration is modular, allowing for easy maintenance and scalability.
+[image_placeholder]
+#### Multi-Stage Pipeline Ochestration 
+- **Job Dependencies**: Proper job dependencies are set up to ensure a smooth and logical flow of tasks.
+[image_placeholder]
+- **Controlled Pipeline Behavior**: The pipeline behavior is controlled and will only be triggered for specific branches, ensuring stable deployments and reducing the risk of issues in production
+[image_placeholder]
