@@ -39,13 +39,13 @@ Now, you should be able to access the game at http://localhost:8080.
 ![Screenshot](docs/images/filetree.png)
 
 #### Continuous Integration (CI)
-Implemented GitLab CI/CD pipelines to automate the integration process, ensuring that all code changes are automatically built and tested. [CI/CD pipeline will be comprehensively explained in this section] 
+Implemented GitLab CI/CD pipelines to automate the integration process, ensuring that all code changes are automatically built and tested. [More Info](#2-building-and-packaging-the-application-as-a-container-in-a-ci/cd-pipeline-ready-for-deployment)  
 - **Build Automation:** Automating the build process to ensure consistency and efficiency in creating deliverable artifacts. 
 - **Static Code Analysis:** Incoperated the following static code analysis tool to identify potential issues early in the development process.
    - **Hadolint**: Integrated Hadolint to analyze Dockerfiles, ensuring best practices are followed and potential issues are identified early in the development process. This helps maintain high-quality Docker images and improves overall project stability.
 
 #### Continuous Delivery/Deployment (CD)
-- **Automated Deployment:** Implemented an automated deployment pipelines to streamline the process of deploying the application. [CI/CD pipeline will be comprehensively explained in this section] 
+- **Automated Deployment:** Implemented an automated deployment pipelines to streamline the process of deploying the application. [More Info](#2-building-and-packaging-the-application-as-a-container-in-a-ci/cd-pipeline-ready-for-deployment) 
 
 
 #### Infrastructure as Code (IaC)
