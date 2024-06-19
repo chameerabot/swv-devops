@@ -92,6 +92,9 @@ The pipeline configuration is modular, allowing for easy maintenance and scalabi
 
 #### Multi-Stage Pipeline Ochestration 
 - **Job Dependencies**: Proper job dependencies are set up to ensure a smooth and logical flow of tasks.
+    - Docker build will only be triggered if Static Testing Jobs are successful.
+    - App Deployment job will only be triggered if Docker build job is successful.
 [image_placeholder]
 - **Controlled Pipeline Behavior**: The pipeline behavior is controlled and will only be triggered for specific branches, ensuring stable deployments and reducing the risk of issues in production
+    - Pipeline will only be triggered for the `main` branch
 [image_placeholder]
