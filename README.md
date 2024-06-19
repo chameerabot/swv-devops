@@ -26,9 +26,9 @@ Now, you should be able to access the game at http://localhost:8080.
 
 ## Solution [ Answers for questions ]
 
-**1. Introducing Best Practices into the Solution to Ensure a High-Quality Deliverable and a Great Developer Experience** 
+### 1. Introducing Best Practices into the Solution to Ensure a High-Quality Deliverable and a Great Developer Experience
 
-### Version Control and Branching Strategy
+#### Version Control and Branching Strategy
 - **Version Control and Branching Strategy:** Implemented a structured branching strategy where CI/CD deployment will only be triggered for the `main` branch to manage the workflow and ensure code quality and stability [Image_placeholder]
 - **Versioning of Artifacts:** Utilizing semantic versioning and the `APP_VERSION` variable, along with `CI_COMMIT_SHA`, to generate unique Docker image tags. This approach helps track changes and ensures compatibility across artifacts [Image_placeholder]
 - **Directory and file structure:** I've adhered to best practices in organizing the files and folders in this repository. The application source code, CI/CD configuration files, and Infrastructure as Code (IaC) files are all separated to maintain clarity and consistency in the project.
@@ -75,4 +75,4 @@ Implemented manual logging in jobs and published those debug logs as GitLab arti
 - **Local Development and Testing:** Included steps to locally build and test the Docker images, enabling effective local development and testing to enhance developer productivity and experience. 
 
 
-
+**2. Building and Packaging the application as a container in a CI/CD pipeline ready for deployment** 
