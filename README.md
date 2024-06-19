@@ -51,8 +51,8 @@ Implemented GitLab CI/CD pipelines to automate the integration process, ensuring
 #### Infrastructure as Code (IaC)
 - **Terraform:** Used Terraform to manage infrastructure as code, allowing for version control and automated provisioning of infrastructure.
     - **Organized File and Folder Structure:** Followed best practices in organizing Terraform files and folders to ensure clarity and consistency in the project.
-![Screenshot](docs/images/screenshot.png)
     - **Authentication:** Utilized best practices in authentication with cloud providers, using IAM roles instead of hard coding secrets.
+<br> 
 ![Screenshot](docs/images/assume_role.png)
 
 
@@ -62,13 +62,15 @@ Implemented comprehensive logging practices to ensure proper capture of logs, en
 Enabled more detailed debug log by setting up `CI_DEBUG_TRACE: "true"` in GitLab.
 - **Manual Logging and Debug Logs:** 
 Implemented manual logging in jobs and published those debug logs as GitLab artifacts.
+<br> 
 ![Screenshot](docs/images/artifact_1.png) ![Screenshot](docs/images/artifact_2.png)
 
 #### Security Best Practices
 - **Static Application Security Testing (SAST):** Using SAST tools to scan code for security vulnerabilities during the development process.
     - **semgrep**: A static analysis tool that helps identify security vulnerabilities and coding errors in codebases. It is integrated into the development process to ensure that potential security issues are caught early and addressed before deployment.
 - **Secrets Management:** Using GitLab's option of masked CI/CD variables to store sensitive information, ensuring that they are not exposed in logs
-![Screenshot](docs/images/screenshot.png)
+<br> 
+![Screenshot](docs/images/masked_variables.png)
 
 #### Documentation
 - **Documentation:** Created a comprehensive documentation of the solution through README.md that also includes Getting Started documentation for a new developer
@@ -90,7 +92,8 @@ Developed a fully automated gitlab CI/CD pipeline that uses best practices
 
 #### Modular CI/CD Configuration 
 The pipeline configuration is modular, allowing for easy maintenance and scalability.
-![Screenshot](docs/images/screenshot.png)
+<br>
+![Screenshot](docs/images/ci_filetree.png)
 
 #### Multi-Stage Pipeline Ochestration 
 - **Job Dependencies**: Proper job dependencies are set up to ensure a smooth and logical flow of tasks.
