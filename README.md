@@ -103,7 +103,8 @@ The pipeline configuration is modular, allowing for easy maintenance and scalabi
     - App Deployment job will only be triggered if Docker build job is successful.
 <br>
 ![Screenshot](docs/images/dependencies.png)
+
 - **Controlled Pipeline Behavior**: The pipeline behavior is controlled and will only be triggered for specific branches, ensuring stable deployments and reducing the risk of issues in production
     - Pipeline will only be triggered for the `main` branch
 <br>
-![Screenshot](docs/images/screenshot.png)
+![Screenshot](docs/images/only_main.png)
