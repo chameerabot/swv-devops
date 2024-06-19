@@ -63,7 +63,7 @@ Enabled more detailed debug log by setting up `CI_DEBUG_TRACE: "true"` in GitLab
 - **Manual Logging and Debug Logs:** 
 Implemented manual logging in jobs and published those debug logs as GitLab artifacts.
 <br> 
-![Screenshot](docs/images/artifact_1.png) ![Screenshot](docs/images/artifact_2.png)
+![Screenshot](docs/images/artifact_3.png) ![Screenshot](docs/images/artifact_1.png) ![Screenshot](docs/images/artifact_2.png)
 
 #### Security Best Practices
 - **Static Application Security Testing (SAST):** Using SAST tools to scan code for security vulnerabilities during the development process.
