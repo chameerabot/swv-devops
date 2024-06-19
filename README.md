@@ -31,7 +31,7 @@ Now, you should be able to access the game at http://localhost:8080.
 #### Version Control and Branching Strategy
 - **Version Control and Branching Strategy:** Implemented a structured branching strategy where CI/CD deployment will only be triggered for the `main` branch to manage the workflow and ensure code quality and stability [Image_placeholder]
 - **Versioning of Artifacts:** Utilizing semantic versioning and the `APP_VERSION` variable, along with `CI_COMMIT_SHA`, to generate unique Docker image tags. This approach helps track changes and ensures compatibility across artifacts [Image_placeholder]
-- **Directory and file structure:** I've adhered to best practices in organizing the files and folders in this repository. The application source code, CI/CD configuration files, and Infrastructure as Code (IaC) files are all separated to maintain clarity and consistency in the project.
+- **Directory and file structure:** Adapted best practices in organizing the files and folders in this repository. The application source code, CI/CD configuration files, and Infrastructure as Code (IaC) files are all separated to maintain clarity and consistency in the project.
 [Image_placeholder]
 
 #### Continuous Integration (CI)
