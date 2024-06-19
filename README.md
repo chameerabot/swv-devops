@@ -3,6 +3,7 @@
 ## Overview
 Since I am not familiar with .NET, I opted to use a PHP web application to showcase my DevOps knowledge. I have containerized the application and built a CI/CD pipeline incorporating best practices.
 This is a small web-based Tetris game developed using PHP.
+[Please note that I did not develop the PHP application; all credit goes to the respective owner. I am responsible for containerizing the application and developing the CI/CD pipeline.]
 
 ## Getting Started
 
