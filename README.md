@@ -89,6 +89,8 @@ Developed a fully automated gitlab CI/CD pipeline that uses best practices
     - **Docker Build Job**
 - **Deployment Stage:** In this final stage, the built Docker image is deployed to an AWS ECS environment.
     - **App Deployment Job**
+<br>
+![Screenshot](docs/images/stages.png)
 
 #### Modular CI/CD Configuration 
 The pipeline configuration is modular, allowing for easy maintenance and scalability.
@@ -99,7 +101,9 @@ The pipeline configuration is modular, allowing for easy maintenance and scalabi
 - **Job Dependencies**: Proper job dependencies are set up to ensure a smooth and logical flow of tasks.
     - Docker build will only be triggered if Static Testing Jobs are successful.
     - App Deployment job will only be triggered if Docker build job is successful.
-![Screenshot](docs/images/screenshot.png)
+<br>
+![Screenshot](docs/images/dependencies.png)
 - **Controlled Pipeline Behavior**: The pipeline behavior is controlled and will only be triggered for specific branches, ensuring stable deployments and reducing the risk of issues in production
     - Pipeline will only be triggered for the `main` branch
+<br>
 ![Screenshot](docs/images/screenshot.png)
