@@ -29,33 +29,49 @@ Now, you should be able to access the game at http://localhost:8080.
 **1. Introducing Best Practices into the Solution to Ensure a High-Quality Deliverable and a Great Developer Experience** 
 
 ### Version Control and Branching Strategy
-- **Version Control and Branching Strategy:** Implementing a structured branching strategy, such as Git Flow, to manage the workflow and ensure code quality and stability.
-- **Versioning of Artifacts:** Using semantic versioning for all artifacts to track changes and ensure compatibility.
-- **GitLab File Structure Explained:** Detailed explanation of the GitLab repository structure to maintain clarity and consistency in the project.
+- **Version Control and Branching Strategy:** Implemented a structured branching strategy where CI/CD deployment will only be triggered for the `main` branch to manage the workflow and ensure code quality and stability [Image_placeholder]
+- **Versioning of Artifacts:** Utilizing semantic versioning and the `APP_VERSION` variable, along with `CI_COMMIT_SHA`, to generate unique Docker image tags. This approach helps track changes and ensures compatibility across artifacts [Image_placeholder]
+- **Directory and file structure:** I've adhered to best practices in organizing the files and folders in this repository. The application source code, CI/CD configuration files, and Infrastructure as Code (IaC) files are all separated to maintain clarity and consistency in the project.
+[Image_placeholder]
 
 ### Continuous Integration (CI)
-- **GitLab:** Utilizing GitLab CI/CD pipelines to automate the integration process, ensuring that all code changes are automatically tested and integrated.
-- **Build Automation:** Automating the build process to ensure consistency and efficiency in creating deliverable artifacts.
-- **Static Code Analysis:** Incorporating static code analysis tools to identify potential issues early in the development process.
+Implemented GitLab CI/CD pipelines to automate the integration process, ensuring that all code changes are automatically built and tested. [CI/CD pipeline will be comprehensively explained in the following section] 
+- **Build Automation:** Automating the build process to ensure consistency and efficiency in creating deliverable artifacts. [Image_Placeholder]
+- **Static Code Analysis:** Incoperated the following static code analysis tool to identify potential issues early in the development process.
+    **Hadolint** [Image_Placeholder]
 
 ### Continuous Delivery/Deployment (CD)
-- **Automated Deployment:** Implementing automated deployment pipelines to streamline the process of deploying applications to various environments.
+- **Automated Deployment:** Implemented an automated deployment pipelines to streamline the process of deploying the application. [CI/CD pipeline will be comprehensively explained in the following section] 
+[Image_placeholder]
 
 ### Infrastructure as Code (IaC)
-- **Terraform:** Using Terraform to manage infrastructure as code, allowing for version control and automated provisioning of infrastructure.
+- **Terraform:** Used Terraform to manage infrastructure as code, allowing for version control and automated provisioning of infrastructure.
+- **Organized File and Folder Structure:** Followed best practices in organizing Terraform files and folders to ensure clarity and consistency in the project.
+[Image_placeholder]
+- **Authentication:** Utilized best practices in authentication with cloud providers, using IAM roles instead of hard coding secrets.
+[Image_placeholder]
 
-### Monitoring and Logging
-- **Logging:** Implementing comprehensive logging practices to ensure that all aspects of the application are monitored and any issues can be quickly identified and resolved.
+
+### Logging
+Implemented comprehensive logging practices to ensure proper capture of logs, enabling quick identification and resolution of issues.
+- **Detailed Debug Log:** 
+Enabled more detailed debug log by setting up `CI_DEBUG_TRACE: "true"` in GitLab.
+- **Manual Logging and Debug Logs:** 
+Implemented manual logging in jobs and published those debug logs as GitLab artifacts.
+[Image_placeholder]
 
 ### Security Best Practices
 - **Static Application Security Testing (SAST):** Using SAST tools to scan code for security vulnerabilities during the development process.
-- **Secrets Management:** Implementing secure methods for managing secrets and sensitive information within the application.
+    **semgrep**
+[Image_placeholder]
+- **Secrets Management:** Using GitLab's option of masked CI/CD variables to store sensitive information, ensuring that they are not exposed in logs
+[Image_placeholder]
 
 ### Documentation
-- **Documentation:** Maintaining thorough and up-to-date documentation to ensure that all aspects of the application are well-understood by current and future developers.
+- **Documentation:** Created a comprehensive documentation of the solution through README.md that also includes Getting Started documentation for a new developer
 
 ### Developer Experience
-- **Local Development and Testing:** Setting up an efficient local development and testing environment to enhance developer productivity and ensure code
+- **Local Development and Testing:** Included steps to locally build and test the Docker images, enabling effective local development and testing to enhance developer productivity and experience. 
 
 
 
