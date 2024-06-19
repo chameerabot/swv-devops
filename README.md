@@ -130,7 +130,7 @@ The pipeline configuration is modular, allowing for easy maintenance and scalabi
    - Ensure this IAM role allows the IAM CLI user to assume it.
 
 4. **Update IAM Role ARN:**
-   - Update the IAM role ARN in the infra-live/terraform.tfvars file for the assume_role_arn variable
+   - Update the IAM role ARN in the infra-live/terraform.tfvars file for the 'assume_role_arn' variable
 
 ### Semgrep App Token
 - Obtain a Semgrep app token for the Semgrep Scan Job.
@@ -142,7 +142,7 @@ The pipeline configuration is modular, allowing for easy maintenance and scalabi
 
 
 
-Once deployment is completed, loadblancer dns name will be logged as a terraform output. You should be able to access the game using the dns name 
+Once you configure, trigger the CI/CD pipeline and when app deployment is completed, loadblancer dns name will be logged as a terraform output. You should be able to access the game using the dns name 
 <br>
 ![Screenshot](docs/images/terraform_output.png)
 
