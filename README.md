@@ -82,7 +82,7 @@ Implemented manual logging in jobs and published those debug logs as GitLab arti
 
 
 ### 2. Building and Packaging the application as a container in a CI/CD pipeline ready for deployment
-Developed a fully automated gitlab CI/CD pipeline that uses best practices
+Containerized the application and developed a fully automated gitlab CI/CD pipeline that uses best practices
 ### Purpose and Functionality
 - **Static Testing Stage:** This stage includes the following static code analysis testing jobs 
     - **Docker Linting Job**
