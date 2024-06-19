@@ -108,3 +108,10 @@ The pipeline configuration is modular, allowing for easy maintenance and scalabi
     - Pipeline will only be triggered for the `main` branch
 <br>
 ![Screenshot](docs/images/only_main.png)
+
+## Notes 
+### App Deployment & Testing 
+Once deployment is completed, loadblancer dns name will be logged as a terraform output. You should be able to access the game using the dns name 
+<br>
+![Screenshot](docs/images/terraform_output.png)
+
