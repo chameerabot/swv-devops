@@ -38,7 +38,8 @@ Now, you should be able to access the game at http://localhost:8080.
 Implemented GitLab CI/CD pipelines to automate the integration process, ensuring that all code changes are automatically built and tested. [CI/CD pipeline will be comprehensively explained in the following section] 
 - **Build Automation:** Automating the build process to ensure consistency and efficiency in creating deliverable artifacts. [Image_Placeholder]
 - **Static Code Analysis:** Incoperated the following static code analysis tool to identify potential issues early in the development process.
-   - **Hadolint** [Image_Placeholder]
+   - **Hadolint**: Integrated Hadolint to analyze Dockerfiles, ensuring best practices are followed and potential issues are identified early in the development process. This helps maintain high-quality Docker images and improves overall project stability.
+   [Image_Placeholder]
 
 ### Continuous Delivery/Deployment (CD)
 - **Automated Deployment:** Implemented an automated deployment pipelines to streamline the process of deploying the application. [CI/CD pipeline will be comprehensively explained in the following section] 
@@ -62,7 +63,7 @@ Implemented manual logging in jobs and published those debug logs as GitLab arti
 
 ### Security Best Practices
 - **Static Application Security Testing (SAST):** Using SAST tools to scan code for security vulnerabilities during the development process.
-    - **semgrep**
+    - **semgrep**: A static analysis tool that helps identify security vulnerabilities and coding errors in codebases. It is integrated into the development process to ensure that potential security issues are caught early and addressed before deployment.
 [Image_placeholder]
 - **Secrets Management:** Using GitLab's option of masked CI/CD variables to store sensitive information, ensuring that they are not exposed in logs
 [Image_placeholder]
