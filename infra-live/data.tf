@@ -1,4 +1,1 @@
-
-data "aws_lb" "main" {
-  name = "main-lb"
-}
+data "aws_availability_zones" "available" {}
