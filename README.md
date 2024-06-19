@@ -112,7 +112,9 @@ The pipeline configuration is modular, allowing for easy maintenance and scalabi
 ### Notes 
 ### CICD Pipeline Testing 
 - 1. Please request access to my personal gitlab project to test the exisitng CICD pipeline 
+<br>
 or 
+<br>
 - 2. If you setup your own gitlab project using this source code please follow these steps 
 ### AWS Authentication
 1. **Create IAM CLI User:**
