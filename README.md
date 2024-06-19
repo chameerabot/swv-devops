@@ -115,6 +115,7 @@ The pipeline configuration is modular, allowing for easy maintenance and scalabi
 <br>
 or 
 <br>
+
 - 2. If you setup your own gitlab project using this source code please follow these steps 
 ### AWS Authentication
 1. **Create IAM CLI User:**
