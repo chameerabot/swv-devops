@@ -77,9 +77,19 @@ Implemented manual logging in jobs and published those debug logs as GitLab arti
 
 ### 2. Building and Packaging the application as a container in a CI/CD pipeline ready for deployment
 Developed a fully automated gitlab CI/CD pipeline that uses best practices
+### Purpose and Functionality
+- **Static Testing Stage:** This stage includes the following static code analysis testing jobs 
+    - **Docker Linting Job :**
+    - **Semgrep Scan Job :**
+- **Build Stage:** This stage involves building the docker image and pushing the Image to AWS ECR.
+    - **Docker Build Job :**
+- **Deployment Stage:** In this final stage, the built Docker image is deployed to an AWS ECS environment.
+    - **App Deployment Job :**
+
 #### Modular CI/CD Configuration 
 The pipeline configuration is modular, allowing for easy maintenance and scalability.
 [image_placeholder]
+
 #### Multi-Stage Pipeline Ochestration 
 - **Job Dependencies**: Proper job dependencies are set up to ensure a smooth and logical flow of tasks.
 [image_placeholder]
